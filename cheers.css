@@ -1,1 +1,85 @@
 /* CSS declarations go here */
+html {
+	border: 1px solid black;
+	width: 320px;
+	height: 568px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+	font-size:4em;
+	font-weight:500;
+}
+
+h2 {
+	text-align: center;
+	font-weight:500;
+}
+
+h3, p {
+	text-align: center;
+}
+
+ul {
+	padding:0 !important;
+}
+
+ul	li {
+	list-style: none;
+	padding: 20px 0;
+	border-bottom: 1px solid black;
+}
+
+input[type=text] {
+	width:280px;
+	margin:0 auto;
+	padding: 10px;
+	font-size:0.9em;
+}
+
+img {
+	width:305px;
+	
+}
+
+.btn {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background: #f55229;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  position:relative;
+  left: 40%;
+  top: 25px;
+}
+
+.btn:hover {
+  background: #f28d74;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+footer ul li {
+	float:left;
+	padding: 7px 3px;
+	border:1px solid black;	
+	width:30%;
+	position:relative;
+	text-align: center;
+}
+
+footer ul li.active {
+	background-color:#4d4d4d;
+	color:white;
+}
+
+footer {
+    position: relative;
+    bottom: -50px;
+}
+

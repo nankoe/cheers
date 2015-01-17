@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cheers - Searching...</title>
+		<link type="text/css" rel="stylesheet" href="cheers.css"  media="screen,projection"/>
+	</head>
+	<body>
+		<h2>Searching for video creators...</h2>
+		<h1 id="countdown">10</h1>
+		<!-- <meta http-equiv="refresh" content="3;url=receiver_found.html" /> -->
+	</body>
+	<script type="text/javascript">
+		var counter = 10;
+		var countdown = document.getElementById("countdown");
+		var id;
+
+		id = setInterval(function() {
+		    counter--;
+		    if(counter < 0) {
+		        window.location.replace("receiver_found.html");
+		    } else {
+		        countdown.innerHTML = counter;
+		    }
+		}, 1000);
+	</script>
+
+</html>
