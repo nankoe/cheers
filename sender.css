@@ -21,12 +21,21 @@ body{
 
 }
 
-#video{
+#video-record,
+#video-review{
 	height: 477px;
-	background: url('images/Golden.gif') no-repeat -175px;
-	background-size: auto 477px;
 	overflow: hidden;
 }
+#video-review{
+	background: url('images/Golden.gif') no-repeat -175px;
+	background-size: auto 477px;
+}
+#video-record{
+	background: url('images/bg.png') no-repeat -175px;
+	background-size: auto 477px;
+}
+
+
 .footer-record,
 .footer-review{
 	height:86px;
