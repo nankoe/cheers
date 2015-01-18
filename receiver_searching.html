@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cheers - Searching...</title>
+		<link type="text/css" rel="stylesheet" href="cheers.css"  media="screen,projection"/>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<h2>Searching for video creators...</h2>
+			<h1 id="countdown">10</h1>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var counter = 10;
+		var countdown = document.getElementById("countdown");
+		var id;
+
+		id = setInterval(function() {
+		    counter--;
+		    if(counter < 1) {
+		        window.location.replace("receiver_found.html");
+		    } else {
+		        countdown.innerHTML = counter;
+		    }
+		}, 1000);
+	</script>
+
+</html>

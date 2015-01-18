@@ -1,54 +1,77 @@
 <!-- simple-todos.html -->
 <head>
-  <title>Todo List</title>
-  <link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
+  <title>Cheers - Spontaneous Journey</title>
+  <!-- <link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" /> -->
  
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
-  <!--<script>
-      var autocomplete;
-      function initialize() {
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {HTMLInputElement} */(document.getElementById('location-input')),
-            { types: ['geocode'] });
-        google.maps.event.addListener(autocomplete, 'place_changed', function() {
-        });
-      }
-  </script>-->
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.WebRTC-Experiment.com/RecordRTC.js"</script>
+  <script type="text/javascript" src="https://cdn.webrtc-experiment.com/gif-recorder.js"</script>
 </head>
 
 <body>
   <div class="container">
 	<header>
-		<h1>Cheers - Satisfy My Curiosity</h1>
-
-    <div>
-      <input id="location-input" type="text" placeholder="Take me to..."/>
-      {{> googleMaps}}
-    </div>  
-
-		<form class="new-task">
-			<input type="text" name="text" placeholder="Type to add new tasks" />
-		</form>
+		<h1>Cheers - Spontaneous Journey</h1>
 	</header>
-
-    <ul>
-      {{#each tasks}}
-        {{> task}}
-      {{/each}}
-    </ul>
   </div>
+  <!--ziggeo ziggeo-width=320 ziggeo-height=240-->
+  <!--/ziggeo-->
+  <video width="320" height="240"></video>
+  <input type="button" value="Stop Recording" onClick="enter()">
+
+  <div>
+    <input id="location-input" type="text" placeholder="Take me to..."/>
+    
+  </div>  
+  <script>
+    var recordRTC;
+    var video = document.querySelector('video');
+    navigator.getUserMedia = ( navigator.getUserMedia ||
+                           navigator.webkitGetUserMedia ||
+                           navigator.mozGetUserMedia ||
+                           navigator.msGetUserMedia);
+
+    if (navigator.getUserMedia) {
+       navigator.getUserMedia (
+
+          // constraints
+          {
+             video: true,
+             audio: true
+          },
+
+          // successCallback
+          function(localMediaStream) {
+             video.src = window.URL.createObjectURL(localMediaStream);
+             // Do something with the video here, e.g. video.play()
+             video.play();
+             recordRTC = RecordRTC(localMediaStream);
+           recordRTC.startRecording();
+          },
+
+          // errorCallback
+          function(err) {
+             console.log("The following error occured: " + err);
+          }
+       );
+    } else {
+       console.log("getUserMedia not supported");
+    }
+
+    function enter() {
+      recordRTC.stopRecording(function(videoURL) {
+        video.src = videoURL;
+      });
+      recordRTC.writeToDisk();
+    }
+  </script>
 </body>
 
 <template name="googleMaps">
   <div id="map-canvas"></div>
-</template>
-
-<template name="task">
-  <li class="{{#if checked}}checked{{/if}}">
-    <button class="delete">&times;</button>
-
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-
-    <span class="text">{{text}}</span>
-  </li>
 </template>
