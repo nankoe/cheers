@@ -15,11 +15,16 @@ body {
 	height: 568px;
 }
 
-#city_list {
-	max-height:78%;
-	overflow:auto;
-
+#travel, #settings {
+	display:none;
 }
+
+#travel {
+	max-height:90%;
+	overflow:auto;
+	position:relative;
+}
+
 
 
 h1 {

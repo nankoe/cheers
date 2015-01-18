@@ -5,29 +5,93 @@
 		<link type="text/css" rel="stylesheet" href="cheers.css"  media="screen,projection"/>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
-		<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>-->
     	<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&v=3.exp&libraries=places"></script>
 		<script src="receiver.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
-			<h2>Where would you like to explore?</h2>
-			<input id="autocomplete" type="text" placeholder="Type in a destination..."></input>
-    		<div id="map-canvas"></div>
-			<a href= "receiver_searching.html" ><div class="btn">Go!</div></a>
+			
+
+
+			<div id="explore">
+				<h2>Where would you like to explore?</h2>
+				<input id="autocomplete" type="text" placeholder="Type in a destination..."></input>
+	    		<div id="map-canvas"></div>
+				<a href= "receiver_searching.html" ><div class="btn">Go!</div></a>
+			</div>
+
+
+			<div id="travel">
+				<h2 id="travel_header">Where would you like to travel to?</h2>
+		      	<div id="city_list">
+			       	<ul>
+			          <li class="list_header">Australia</li>
+			          <a href="receiver_searching.html"><li>Sydney</li></a>
+			          <li class="list_header">France</li>
+			          <a href="receiver_searching.html"><li>Paris</li></a>
+			          <li class="list_header">Japan</li>
+			          <a href="receiver_searching.html"><li>Tokyo, Tokyo Prefecture</li></a>
+			          <li class="list_header">United States</li>
+			          <a href="receiver_searching.html"><li>Austin, Texas</li></a>
+			          <a href="receiver_searching.html"><li>New York City, New York</li></a>
+			          <a href="receiver_searching.html"><li>Pittsburgh, Pennsylvania</li></a>
+			          <a href="receiver_searching.html"><li>San Francisco, California</li></a>
+			          <a href="receiver_searching.html"><li>Seattle, Washington</li></a>
+			          <li class="list_header">Venezuela</li>
+			          <a href="receiver_searching.html"><li>Caracas</li></a>
+			        </ul>
+		      	</div>
+			</div>
+
+
+			<div id="settings">
+				<h2>Settings</h2>
+				<div class="img"></div>
+				<h3>nanakoe</h3>
+				<p>Contributed: 94 videos</p>
+				<p>Requested: 10 videos</p>
+			</div>
+
 			<footer>
 		    	<ul>
-		    		<a href="receiver_explore.html" >
-		    			<li class="active"><i class="fa fa-globe fa-lg"></i>Explore</li>
-		    		</a>
-		    		<a href="receiver_travel.html">
-		    			<li><i class="fa fa-plane fa-lg"></i>Travel</li>
-		    		</a>
-		    		<a href="receiver_settings.html">
-		    			<li><i class="fa fa-cog fa-lg"></i>Settings</li>
-		    		</a>
+		    		<!-- <a href="receiver_explore.html" > -->
+		    			<li class="active" id="explore_nav"><i class="fa fa-globe fa-lg"></i>Explore</li>
+		    		<!-- </a> -->
+		    		<!-- <a href="receiver_travel.html"> -->
+		    			<li id="travel_nav"><i class="fa fa-plane fa-lg"></i>Travel</li>
+		    		<!-- </a> -->
+		    		<!-- <a href="receiver_settings.html"> -->
+		    			<li id="settings_nav"><i class="fa fa-cog fa-lg"></i>Settings</li>
+		    		<!-- </a> -->
 		    	</ul>
 			</footer>
 		</div>
+		<script type="text/javascript">
+			$("#travel_nav").click(function(){
+				$("#travel").show();
+				$("#explore").hide();
+				$("#settings").hide();
+				$(this).addClass("active");
+				$("#settings_nav").removeClass("active");
+				$("#explore_nav").removeClass("active");
+			});
+			$("#settings_nav").click(function(){
+				$("#travel").hide();
+				$("#explore").hide();
+				$("#settings").show();
+				$(this).addClass("active");
+				$("#explore_nav").removeClass("active");
+				$("#travel_nav").removeClass("active");
+			});
+			$("#explore_nav").click(function(){
+				$("#travel").hide();
+				$("#explore").show();
+				$("#settings").hide();
+				$(this).addClass("active");
+				$("#settings_nav").removeClass("active");
+				$("#travel_nav").removeClass("active");
+			});
+		</script>
 	</body>
 </html>
