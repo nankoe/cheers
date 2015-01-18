@@ -5,19 +5,16 @@
 		<link type="text/css" rel="stylesheet" href="cheers.css"  media="screen,projection"/>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+		<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>-->
+    	<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&v=3.exp&libraries=places"></script>
+		<script src="receiver.js"></script>
 	</head>
 	<body>
 		<div class="container">
 			<h2>Where would you like to explore?</h2>
-			<input type="text" placeholder="Type in a destination..."></input>
-			<a href= "receiver_searching.html"><div class="btn">Go!</div></a>
-			<iframe
-			  width="320"
-			  height="320"
-			  frameborder="0" style="border:0"
-			  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBOLcwmvZLKjS8Vt_g_0fKlPFJUk3lWI0Q&q=Carnegie+Mellon+University,Pittsburgh+Pennsylvania">
-			</iframe>
+			<input id="autocomplete" type="text" placeholder="Type in a destination..."></input>
+    		<div id="map-canvas"></div>
+			<a href= "receiver_searching.html" ><div class="btn">Go!</div></a>
 			<footer>
 		    	<ul>
 		    		<a href="receiver_explore.html" >
@@ -33,5 +30,4 @@
 			</footer>
 		</div>
 	</body>
-
 </html>
