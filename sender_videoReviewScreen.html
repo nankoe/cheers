@@ -1,0 +1,38 @@
+<head>
+  <title>Cheers</title>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="sender.css">
+  <script src="sender.js"></script>
+  
+</head>
+
+<body>
+  <div id="video">
+    <svg viewbox="0 0 250 250">
+        <path id="border" transform="translate(125,125)"/>
+        <path id="loader" transform="translate(125,125) scale(.84)"/>
+    </svg>
+  </div>
+  <div class="footer-review">
+  	<a href="sender_videoScreen.html" class="footer-content footer-text" id="retake">
+  		Retake
+  	</a>
+  	<div class="footer-content play" >
+  		<i class="fa fa-play fa-3x"></i>
+  	</div>
+  	<div class="footer-content footer-text" id="send">
+  		Send
+  	</div>
+  </div>
+
+  <script src="http://cdn.rawgit.com/darius/requestAnimationFrame/master/requestAnimationFrame.min.js"></script>
+<script src="svgPieTimer.min.js"></script>
+<script>
+var loader = document.getElementById("loader");
+svgPieTimer({
+    element: [loader],
+    duration: 5000,
+    loops: 0
+});
+</script>
+</body>
