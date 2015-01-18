@@ -1,0 +1,121 @@
+/* CSS declarations go here */
+body{
+	height:568px;
+	width: 320px;
+	border:1px black solid;
+	margin:0px;
+	overflow: hidden;
+}
+
+
+#record{
+    top:5%;
+    left:5%;    
+    border-radius:50%;
+    width:67px;
+    height:67px;
+    display:inline-block;
+    -webkit-background: radial-gradient(circle, #D73434 50%, #FF0000 100%);
+   	background: radial-gradient(circle, #D73434 50%, #FF0000 100%);
+	border: 7px solid #FFFFFF;
+
+}
+
+#video{
+	height: 477px;
+	background: url('images/Golden.gif') no-repeat -175px;
+	background-size: auto 477px;
+	overflow: hidden;
+}
+.footer-record,
+.footer-review{
+	height:86px;
+	background-color: #000;
+	padding-top: 5px;
+}
+
+.footer-record{
+	text-align: center;
+}
+
+.footer-content{
+	width:33%;
+	float: left;
+	text-align: center;
+	top:28%;
+	position:relative;
+}
+
+.footer-text{
+	/* Send: */
+	font-family: HelveticaNeue-Light;
+	font-size: 24px;
+	color: #4A90E2;
+	line-height: 28px;
+}
+
+#circle{ 
+    border-radius:50%;
+    width:45px;
+    height:45px;
+    position:relative;
+	background: rgba(91,76,76,0.75);
+	-webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    left:260px;
+	top:15px;
+}
+
+.play{
+    top:20% !important;
+}
+
+.white{
+	color:#fff;
+}
+
+.video{
+	position: absolute;
+	left:-170px;
+	height: 477px;
+}
+
+svg {
+    display: block;
+    position:absolute;
+    left:260px;
+	top:15px;
+    width: 40px;
+    height: 40px;
+  
+  /* To reverse the animation, flip the object using CSS by uncommenting the below */
+  
+  /*-webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";*/
+}
+
+#loader { 
+	fill: rgba(91,76,76,0.75);
+-webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    z-index: 9999;
+}
+
+#border 
+{ fill: #9b2 }
+
+#retake{
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
