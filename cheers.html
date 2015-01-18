@@ -1,14 +1,54 @@
+<!-- simple-todos.html -->
 <head>
-  <title>corazon</title>
+  <title>Todo List</title>
+  <link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
+ 
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+  <!--<script>
+      var autocomplete;
+      function initialize() {
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {HTMLInputElement} */(document.getElementById('location-input')),
+            { types: ['geocode'] });
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        });
+      }
+  </script>-->
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <div class="container">
+	<header>
+		<h1>Cheers - Satisfy My Curiosity</h1>
 
-  {{> hello}}
+    <div>
+      <input id="location-input" type="text" placeholder="Take me to..."/>
+      {{> googleMaps}}
+    </div>  
+
+		<form class="new-task">
+			<input type="text" name="text" placeholder="Type to add new tasks" />
+		</form>
+	</header>
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="googleMaps">
+  <div id="map-canvas"></div>
+</template>
+
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    <span class="text">{{text}}</span>
+  </li>
 </template>
