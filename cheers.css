@@ -1,3 +1,4 @@
+/* CSS declarations go here */
 html {
   font-family: 'Open Sans', Arial, sans-serif;  
   color:#4d4d4d;
@@ -25,11 +26,17 @@ h2 {
   text-align: center;
   font-weight:300;
   font-size:1.2em;
-  padding:10px 0;
+  padding:20px 0;
+  background-color: #eee;
+  margin: 0 0 20px 0;
 }
 
 h3, p {
   text-align: center;
+}
+
+h3 {
+  font-weight:500;
 }
 
 a {
@@ -44,8 +51,16 @@ ul {
 ul  li {
   list-style: none;
   padding: 20px 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
   background-color: white;
+}
+
+.list_header {
+  font-weight:600;
+  font-size:0.8em;
+  border-bottom:none;
+  padding:7px;
+  background-color:#eee;
 }
 
 input[type=text] {
@@ -55,9 +70,20 @@ input[type=text] {
   font-size:0.9em;
 }
 
-img {
-  width:320px;
-  
+.img {
+  border-radius:100px;
+  height: 100px;
+  width: 100px;
+  background: url(images/nanako.JPG) no-repeat -40px;
+  background-size:170px;
+  margin:0 auto;
+}
+
+#map-canvas {
+  height: 320px;
+  width: 320px;
+  margin-top: 10px;
+  margin-bottom:0;
 }
 
 .btn {
@@ -72,7 +98,7 @@ img {
   text-decoration: none;
   position:relative;
   left: 35%;
-  top: 25px;
+  top: 10px;
 }
 
 .spinner {
