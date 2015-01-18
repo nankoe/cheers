@@ -1,7 +1,7 @@
 function initialize() {
   var mapOptions = {
-    center: new google.maps.LatLng(-33.8688, 151.2195),
-    zoom: 13
+    center: new google.maps.LatLng(40.4433, -79.9436),
+    zoom: 14
   };
   var map = new google.maps.Map(document.getElementById('map-canvas'),
     mapOptions);
@@ -20,19 +20,18 @@ function initialize() {
 
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     infowindow.close();
-    marker.setVisible(false);
     var place = autocomplete.getPlace();
     if (!place.geometry) {
       return;
     }
 
     // If the place has a geometry, then present it on a map.
-    if (place.geometry.viewport) {
-      map.fitBounds(place.geometry.viewport);
-    } else {
+    // if (place.geometry.viewport) {
+    //   map.fitBounds(place.geometry.viewport);
+    // } else {
       map.setCenter(place.geometry.location);
-      map.setZoom(17);  // Why 17? Because it looks good.
-    }
+      map.setZoom(12);  // Why 17? Because it looks good.
+    // }
     marker.setIcon(/** @type {google.maps.Icon} */({
       url: place.icon,
       size: new google.maps.Size(71, 71),
